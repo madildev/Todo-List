@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <main id="app">
+      <div class="header">
+        <h1>{{title}}</h1>
+      </div>
+      <div class="container">
+        <div class="add-element">
+          <div class="element-input">
+           <form @submit.prevent="addTodo">
+           <input v-model="newTodo" type="text" name="newTodo" id="newTodo" value="" placeholder="What you want to do next!" required>
+           <button type="submit" name="button" onclick="onDisplay">Add</button>
+            <button @click="allDone" type="button" name="button">All Done</button>
+           </form>
+          </div> 
+        </div>
+        <div class="element-list">
+          <ul>
+            <li v-for="todo in todos">
+                <input type="text" name="newTodo" id="Output" :class="{done: todo.done}" v-model="todo.title" disabled>
+                <button @click="toggle(todo)" type="button" name="button">Done</button>
+                <button @click="removeTodo(todo)" type="button" name="button">Remove</button>
+            </li>
+          </ul>
+         </div>
+       </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js" charset="utf-8"></script>
+  </body>
+</html>
