@@ -54,7 +54,7 @@ button
 {
     font-family: 'Nunito',sans-serif;
     margin-top: 3px;
-    overflow-y: scroll;
+    scroll-behavior: auto;
     width: 100%;
     height: 80%;
     overflow-x: hidden;
